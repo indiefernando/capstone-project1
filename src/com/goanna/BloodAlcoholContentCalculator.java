@@ -26,5 +26,14 @@ public class BloodAlcoholContentCalculator {
 
         System.out.println("Amount of hours since your first drink:");
         double hoursDrinking = scan.nextDouble();
+
+        System.out.println("Your current Blood Alcohol Content is at: ");
+        double bloodAlcoholContent = ((10 * standardDrinks) - (7.5 * hoursDrinking)) / (6.8 * weight);
+        System.out.println(bloodAlcoholContent);
+
+        System.out.println("Hours until Blood Alcohol content is back to zero: ");
+        double hoursUntilZero = bloodAlcoholContent / 0.015;
+        System.out.println(hoursUntilZero);
+
     }
     }
