@@ -12,4 +12,19 @@ public class BloodAlcoholContentCalculator {
 
     Scanner scan = new Scanner(System.in);
 
-}
+        System.out.println("Please enter your gender ('Male' or 'Female'): ");
+		scan.next();
+
+		if (input.equals("Male")); {
+
+        System.out.println("Weight in kilograms:");
+
+        double weight = scan.nextDouble();
+
+        System.out.println("Amount of standard drinks consumed:");
+        double standardDrinks = scan.nextDouble();
+
+        System.out.println("Amount of hours since your first drink:");
+        double hoursDrinking = scan.nextDouble();
+    }
+    }
