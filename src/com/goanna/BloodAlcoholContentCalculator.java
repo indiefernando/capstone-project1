@@ -10,8 +10,7 @@ public class BloodAlcoholContentCalculator {
         System.out.println("Please enter your gender ('Male' or 'Female'): ");
         String input = scan.next();
 
-
-        if(input.equals("Male")){
+        if(input.equalsIgnoreCase("Male")){
 
             System.out.println("Weight in kilograms:");
             double weight = scan.nextDouble();
@@ -30,7 +29,7 @@ public class BloodAlcoholContentCalculator {
             double hoursUntilZero = bloodAlcoholContent / 0.015;
             System.out.println(hoursUntilZero);
 
-        } else if (input.equals("Female")) {
+        } else if (input.equalsIgnoreCase("Female")) {
 
             System.out.println("Weight in kilograms:");
             double weight = scan.nextDouble();
