@@ -5,18 +5,13 @@ import java.util.Scanner;
 public class BloodAlcoholContentCalculator {
     public static void main(String[] args) {
 
-        String male;
-        String input = "Male";
-
-        String female;
-        String inp = "Female";
-
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Please enter your gender ('Male' or 'Female'): ");
-        scan.next();
+        String input = scan.next();
 
-        if (input.equals("Male")); {
+
+        if(input.equals("Male")){
 
             System.out.println("Weight in kilograms:");
             double weight = scan.nextDouble();
@@ -35,9 +30,9 @@ public class BloodAlcoholContentCalculator {
             double hoursUntilZero = bloodAlcoholContent / 0.015;
             System.out.println(hoursUntilZero);
 
-        } else if (inp.equals("Female")) {
-            System.out.println("Weight in kilograms:");
+        } else if (input.equals("Female")) {
 
+            System.out.println("Weight in kilograms:");
             double weight = scan.nextDouble();
 
             System.out.println("Amount of standard drinks consumed:");
