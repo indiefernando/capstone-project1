@@ -3,55 +3,60 @@ package com.goanna;
 import java.util.Scanner;
 
 public class BloodAlcoholContentCalculator {
+    public static void main(String[] args) {
 
-    String male;
-    String input = "Male";
+        String male;
+        String input = "Male";
 
-    String female;
-    String inp = "Female";
+        String female;
+        String inp = "Female";
 
-    Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
 
         System.out.println("Please enter your gender ('Male' or 'Female'): ");
-		scan.next();
+        scan.next();
 
-		if (input.equals("Male")); {
+        if (input.equals("Male")); {
 
-        System.out.println("Weight in kilograms:");
+            System.out.println("Weight in kilograms:");
+            double weight = scan.nextDouble();
 
-        double weight = scan.nextDouble();
+            System.out.println("Amount of standard drinks consumed:");
+            double standardDrinks = scan.nextDouble();
 
-        System.out.println("Amount of standard drinks consumed:");
-        double standardDrinks = scan.nextDouble();
+            System.out.println("Amount of hours since your first drink:");
+            double hoursDrinking = scan.nextDouble();
 
-        System.out.println("Amount of hours since your first drink:");
-        double hoursDrinking = scan.nextDouble();
+            System.out.println("Your current Blood Alcohol Content is at: ");
+            double bloodAlcoholContent = ((10 * standardDrinks) - (7.5 * hoursDrinking)) / (6.8 * weight);
+            System.out.println(bloodAlcoholContent);
 
-        System.out.println("Your current Blood Alcohol Content is at: ");
-        double bloodAlcoholContent = ((10 * standardDrinks) - (7.5 * hoursDrinking)) / (6.8 * weight);
-        System.out.println(bloodAlcoholContent);
+            System.out.println("Hours until Blood Alcohol content is back to zero: ");
+            double hoursUntilZero = bloodAlcoholContent / 0.015;
+            System.out.println(hoursUntilZero);
 
-        System.out.println("Hours until Blood Alcohol content is back to zero: ");
-        double hoursUntilZero = bloodAlcoholContent / 0.015;
-        System.out.println(hoursUntilZero);
+        } else if (inp.equals("Female")) {
+            System.out.println("Weight in kilograms:");
 
-    } else if (inp.equals("Female")) {
-        System.out.println("Weight in kilograms:");
+            double weight = scan.nextDouble();
 
-        double weight = scan.nextDouble();
+            System.out.println("Amount of standard drinks consumed:");
+            double standardDrinks = scan.nextDouble();
 
-        System.out.println("Amount of standard drinks consumed:");
-        double standardDrinks = scan.nextDouble();
+            System.out.println("Amount of hours since your first drink:");
+            double hoursDrinking = scan.nextDouble();
 
-        System.out.println("Amount of hours since your first drink:");
-        double hoursDrinking = scan.nextDouble();
+            System.out.println("Your current Blood Alcohol Content is at: ");
+            double bloodAlcoholContent = ((10 * standardDrinks) - (7.5 * hoursDrinking)) / (5.5 * weight);
+            System.out.println(bloodAlcoholContent);
 
-        System.out.println("Your current Blood Alcohol Content is at: ");
-        double bloodAlcoholContent = ((10 * standardDrinks) - (7.5 * hoursDrinking)) / (5.5 * weight);
-        System.out.println(bloodAlcoholContent);
+            System.out.println("Hours until Blood Alcohol content is back to zero: ");
+            double hoursUntilZero = bloodAlcoholContent / 0.015;
+            System.out.println(hoursUntilZero);
 
-        System.out.println("Hours until Blood Alcohol content is back to zero: ");
-        double hoursUntilZero = bloodAlcoholContent / 0.015;
-        System.out.println(hoursUntilZero);
+        } else {
+            System.out.println("Invalid input for gender. Please enter 'Male' or 'Female'");
+
+        }
     }
-    }
+}
