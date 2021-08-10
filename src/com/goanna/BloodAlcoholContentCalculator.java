@@ -27,6 +27,7 @@ public class BloodAlcoholContentCalculator {
             double bloodAlcoholContent = getBloodAlcoholContent(input, weight, standardDrinks, hoursDrinking);
             System.out.println(bloodAlcoholContent);
 
+            System.out.println(" ");
             System.out.println("Hours until Blood Alcohol content is back to zero: ");
             double hoursUntilZero = bloodAlcoholContent / 0.015;
             System.out.println(hoursUntilZero);
